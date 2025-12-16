@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&amp;family=Poppins:wght@400;500;600;700;800&amp;family=Noto+Sans:wght@400;500;700;900&amp;display=swap" onload="this.rel='stylesheet'" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<title>Stitch Design</title>
+<link href="data:image/x-icon;base64," rel="icon" type="image/x-icon"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link crossorigin="anonymous" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" referrerpolicy="no-referrer" rel="stylesheet"/>
+<style type="text/tailwindcss">
+        :root {
+            --primary-color: #B99470;
+            --secondary-color: #A9B464;
+            --accent-color: #E6A4B4;
+        }
+        .slider-container {
+            scroll-snap-type: x mandatory;
+            scroll-behavior: smooth;
+        }
+        .slider-item {
+            scroll-snap-align: start;
+        }
+        body {
+            font-family: 'Poppins', 'Inter', "Noto Sans", sans-serif;
+            background-color: #FAF8F1;
+        }
+        .grainy-background {
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300"><filter id="noiseFilter"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="1" stitchTiles="stitch"/></filter><rect width="100%" height="100%" filter="url(%23noiseFilter)"/></svg>');
+            background-size: auto;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.08;
+            z-index: -1;
+        }
+        .animated-shape {
+            position: absolute;
+            border-radius: 50%;
+            opacity: 0.15;
+            z-index: -1;
+            filter: blur(80px);
+            animation: drift 40s infinite linear alternate;
+        }
+        @keyframes drift {
+            0% {
+                transform: translate(var(--start-x), var(--start-y)) scale(var(--start-s));
+            }
+            100% {
+                transform: translate(var(--end-x), var(--end-y)) scale(var(--end-s));
+            }
+        }
+    </style>
+</head>
+<body class="bg-[#FAF8F1]" style="font-family: 'Poppins', 'Inter', sans-serif;">
+<div class="grainy-background"></div>
+<div class="fixed top-0 left-0 w-full h-full overflow-hidden -z-10">
+<div class="animated-shape bg-[var(--primary-color)] w-96 h-96" style="--start-x: -10vw; --start-y: -10vh; --start-s: 1; --end-x: 20vw; --end-y: 80vh; --end-s: 1.3; animation-duration: 45s;"></div>
+<div class="animated-shape bg-[var(--secondary-color)] w-72 h-72" style="--start-x: 100vw; --start-y: 20vh; --start-s: 1.1; --end-x: -15vw; --end-y: 60vh; --end-s: 0.9; animation-duration: 55s; animation-delay: -10s;"></div>
+<div class="animated-shape bg-[var(--accent-color)] w-80 h-80" style="--start-x: 80vw; --start-y: 90vh; --start-s: 0.8; --end-x: 10vw; --end-y: -20vh; --end-s: 1.2; animation-duration: 50s; animation-delay: -20s;"></div>
+<div class="animated-shape bg-amber-300 w-64 h-64" style="--start-x: 5vw; --start-y: 110vh; --start-s: 1.2; --end-x: 90vw; --end-y: -10vh; --end-s: 1; animation-duration: 60s; animation-delay: -30s;"></div>
+</div>
+<div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<header class="flex justify-center py-8 px-4">
+<div class="flex items-center gap-6 text-slate-900">
+<a class="text-base font-semibold text-gray-700 hover:text-[var(--primary-color)] transition-all duration-300" href="#about">About</a>
+<a class="text-base font-semibold text-gray-700 hover:text-[var(--primary-color)] transition-all duration-300" href="#services">Services</a>
+<a class="text-base font-semibold text-gray-700 hover:text-[var(--primary-color)] transition-all duration-300" href="#projects">Projects</a>
+<a class="text-base font-semibold text-gray-700 hover:text-[var(--primary-color)] transition-all duration-300" href="#contact">Contact</a>
+</div>
+</header>
+<main class="flex flex-1 justify-center py-10">
+<div class="layout-content-container flex flex-col max-w-6xl flex-1 gap-24">
+<section class="grid grid-cols-1 md:grid-cols-2 items-center gap-12 px-4 min-h-[70vh]">
+<div class="flex flex-col gap-6 text-left">
+<h1 class="text-5xl md:text-7xl font-extrabold tracking-tighter text-slate-900">Graphic & Web designer</h1>
+<a class="mt-4 inline-flex items-center justify-start py-3 px-8 shadow-sm text-base font-semibold rounded-full text-white bg-stone-800 hover:bg-stone-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[var(--primary-color)] w-full sm:w-auto transition-all duration-300 transform hover:scale-105" href="#projects"> Go to Projects </a>
+</div>
+<div class="relative flex justify-center items-center group">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-3xl h-80 w-80 md:h-96 md:w-96 transition-transform duration-500 ease-in-out group-hover:scale-105 transform -rotate-3" style='background-image: url("IMG_2420.jpg");'></div>
+</div>
+</section>
+<section class="px-4" id="about">
+<div class="text-center">
+<h2 class="text-slate-900 text-5xl font-extrabold tracking-tighter">About Me</h2>
+<p class="text-slate-600 mt-6 max-w-3xl mx-auto leading-relaxed"> My name is Sofia Bayol and I'm experienced specialist in graphic and web design. Over 5 years, I have successfully implemented many projects - from developing corporate identity to creating adaptive websites and user interfaces. I am confident in using Adobe Creative Suite, Figma and other modern design tools. I have a sense of style, attention to detail and an understanding of business tasks. </p>
+</div>
+</section>
+<section class="px-4" id="services">
+<h2 class="text-slate-900 text-5xl font-extrabold tracking-tighter mb-12 text-center">Services</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="flex flex-col items-center gap-4 rounded-2xl bg-[#FAF8F1]/50 p-8 text-center shadow-lg transform hover:-translate-y-2 transition-all duration-300">
+<div class="bg-stone-800 text-white rounded-full p-4">
+<span class="material-symbols-outlined text-4xl">design_services</span>
+</div>
+<h3 class="text-slate-900 text-xl font-bold">Web Design</h3>
+<p class="text-slate-500 text-sm">I develop website and interface designs: from prototypes to finished layouts. I create adaptive and user-friendly solutions taking into account business goals.</p>
+</div>
+<div class="flex flex-col items-center gap-4 rounded-2xl bg-[#FAF8F1]/50 p-8 text-center shadow-lg transform hover:-translate-y-2 transition-all duration-300 md:mt-8">
+<div class="bg-stone-800 text-white rounded-full p-4">
+<span class="material-symbols-outlined text-4xl">touch_app</span>
+</div>
+<h3 class="text-slate-900 text-xl font-bold">Corporate Identity</h3>
+<p class="text-slate-500 text-sm">I develop corporate identity: logo, color palette, typography and visual elements for a uniform brand perception.</p>
+</div>
+<div class="flex flex-col items-center gap-4 rounded-2xl bg-[#FAF8F1]/50 p-8 text-center shadow-lg transform hover:-translate-y-2 transition-all duration-300">
+<div class="bg-stone-800 text-white rounded-full p-4">
+<span class="material-symbols-outlined text-4xl">code</span>
+</div>
+<h3 class="text-slate-900 text-xl font-bold">SMM Design</h3>
+<p class="text-slate-500 text-sm">I create visual content for social networks: creatives, covers, post templates and stories in a single brand style.</p>
+</div>
+</div>
+</section>
+<section class="px-4 w-full" id="projects">
+<h2 class="text-slate-900 text-5xl font-extrabold tracking-tighter mb-12 text-center">Projects</h2>
+<div class="relative">
+<div class="slider-container flex overflow-x-auto snap-x snap-mandatory scrollbar-hide -mx-4 px-4">
+<div class="slider-item flex-shrink-0 w-full snap-start px-4" id="slide-1">
+<div class="grid grid-cols-1 md:grid-cols-5 items-center gap-8 bg-[#FAF8F1]/50 p-8 rounded-3xl shadow-xl overflow-hidden cursor-pointer group">
+<div class="md:col-span-3 bg-center bg-no-repeat aspect-video bg-cover rounded-2xl" style='background-image: url("Frame 128.jpg");'></div>
+<div class="md:col-span-2 flex flex-col gap-3 p-4">
+<h3 class="text-slate-900 text-3xl font-bold">Corporate Identity</h3>
+<p class="text-slate-600">Creation of a corporate identity for a skincare brand</p>
+</div>
+</div>
+</div>
+<div class="slider-item flex-shrink-0 w-full snap-start px-4" id="slide-2">
+<div class="grid grid-cols-1 md:grid-cols-5 items-center gap-8 bg-[#FAF8F1]/50 p-8 rounded-3xl shadow-xl overflow-hidden cursor-pointer group">
+<div class="md:col-span-3 bg-center bg-no-repeat aspect-video bg-cover rounded-2xl" style='background-image: url("началоо.png");'></div>
+<div class="md:col-span-2 flex flex-col gap-3 p-4">
+<h3 class="text-slate-900 text-3xl font-bold">Web Application</h3>
+<p class="text-slate-600">Creating a web detox application in all adaptive versions</p>
+</div>
+</div>
+</div>
+<div class="slider-item flex-shrink-0 w-full snap-start px-4" id="slide-3">
+<div class="grid grid-cols-1 md:grid-cols-5 items-center gap-8 bg-[#FAF8F1]/50 p-8 rounded-3xl shadow-xl overflow-hidden cursor-pointer group">
+<div class="md:col-span-3 bg-center bg-no-repeat aspect-video bg-cover rounded-2xl" style='background-image: url("Frame 163.png");'></div>
+<div class="md:col-span-2 flex flex-col gap-3 p-4">
+<h3 class="text-slate-900 text-3xl font-bold">Corporate Identity</h3>
+<p class="text-slate-600">Creating a corporate identity for a grooming salon</p>
+</div>
+</div>
+</div>
+</div>
+<div class="flex justify-center gap-3 mt-8">
+<a class="w-3 h-3 bg-slate-300 rounded-full hover:bg-[var(--primary-color)] transition-colors" href="#slide-1"></a>
+<a class="w-3 h-3 bg-slate-300 rounded-full hover:bg-[var(--secondary-color)] transition-colors" href="#slide-2"></a>
+<a class="w-3 h-3 bg-slate-300 rounded-full hover:bg-[var(--accent-color)] transition-colors" href="#slide-3"></a>
+</div>
+</div>
+</section>
+<section class="px-4" id="contact">
+<div class="bg-[#FAF8F1]/50 p-10 md:p-16 rounded-3xl shadow-2xl relative overflow-hidden">
+<h2 class="text-slate-900 text-5xl font-extrabold tracking-tighter mb-8 text-center">Contact Me</h2>
+<form class="space-y-6 max-w-2xl mx-auto">
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+<div>
+<label class="block text-sm font-medium text-slate-700" for="name">Name</label>
+<input class="mt-1 form-input block w-full rounded-lg border-stone-300 shadow-sm focus:border-[var(--primary-color)] focus:ring-[var(--primary-color)] sm:text-sm py-3 bg-transparent" id="name" placeholder="Your Name" type="text"/>
+</div>
+<div>
+<label class="block text-sm font-medium text-slate-700" for="email">Email</label>
+<input class="mt-1 form-input block w-full rounded-lg border-stone-300 shadow-sm focus:border-[var(--primary-color)] focus:ring-[var(--primary-color)] sm:text-sm py-3 bg-transparent" id="email" placeholder="Your Email" type="email"/>
+</div>
+</div>
+<div>
+<label class="block text-sm font-medium text-slate-700" for="message">Message</label>
+<textarea class="mt-1 form-textarea block w-full rounded-lg border-stone-300 shadow-sm focus:border-[var(--primary-color)] focus:ring-[var(--primary-color)] sm:text-sm bg-transparent" id="message" placeholder="Your Message" rows="5"></textarea>
+</div>
+<div class="flex justify-center">
+<button class="inline-flex items-center justify-center py-3 px-8 shadow-sm text-base font-semibold rounded-full text-white bg-stone-800 hover:bg-stone-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[var(--primary-color)] w-full sm:w-auto transition-all duration-300 transform hover:scale-105" type="submit"> Send Message </button>
+</div>
+</form>
+</div>
+</section>
+</div>
+</main>
+<footer class="text-center py-8 px-4">
+<div class="flex justify-center items-center gap-6 mb-4">
+<a class="text-slate-600 hover:text-rose-500 transition-colors duration-300" href="#">
+<i class="fab fa-instagram text-2xl"></i>
+</a>
+<a class="text-slate-600 hover:text-blue-500 transition-colors duration-300" href="#">
+<i class="fab fa-telegram-plane text-2xl"></i>
+</a>
+<a class="text-slate-600 hover:text-amber-600 transition-colors duration-300" href="#">
+<i class="fab fa-behance text-2xl"></i>
+</a>
+</div>
+<p class="text-slate-500 text-sm">Времени ушло: 1 час
+    &nbsp;
+    &nbsp;
+    &nbsp;
+    &nbsp;
+    &nbsp;
+    &nbsp;
+    &nbsp;
+    &nbsp;
+    &nbsp;
+    Использованная нейросеть: Stitch
+</p>
+</footer>
+</div>
+</div>
+
+</body></html>

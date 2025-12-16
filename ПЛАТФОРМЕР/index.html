@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pixel Jumper - Платформер</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="game-container">
+        <h1 class="game-title">🎮 Pixel Jumper</h1>
+        
+        <div class="game-wrapper">
+            <canvas id="gameCanvas" width="800" height="500"></canvas>
+            <div class="ui-overlay">
+                <div class="score-display">
+                    <i class="fas fa-coins"></i> Очки: <span id="score">0</span>
+                </div>
+                <div class="lives-display">
+                    <i class="fas fa-heart"></i> Жизни: <span id="lives">3</span>
+                </div>
+                <div class="level-display">
+                    Уровень: <span id="level">1</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="controls">
+            <div class="control-buttons">
+                <button id="startBtn" class="btn btn-start">
+                    <i class="fas fa-play"></i> Старт
+                </button>
+                <button id="pauseBtn" class="btn btn-pause">
+                    <i class="fas fa-pause"></i> Пауза
+                </button>
+                <button id="restartBtn" class="btn btn-restart">
+                    <i class="fas fa-redo"></i> Рестарт
+                </button>
+            </div>
+            
+            <div class="instructions">
+                <h3><i class="fas fa-gamepad"></i> Управление:</h3>
+                <div class="keys">
+                    <div class="key-group">
+                        <span class="key">A</span> / <span class="key">←</span> Влево
+                    </div>
+                    <div class="key-group">
+                        <span class="key">D</span> / <span class="key">→</span> Вправо
+                    </div>
+                    <div class="key-group">
+                        <span class="key">Space</span> / <span class="key">W</span> Прыжок
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="game-message" id="gameMessage"></div>
+        
+        <div class="rules">
+            <h3><i class="fas fa-info-circle"></i> Правила игры:</h3>
+            <ul>
+                <li>Собирайте <i class="fas fa-coins" style="color: gold;"></i> монеты для увеличения счета</li>
+                <li>Избегайте <i class="fas fa-skull-crossbones"></i> врагов</li>
+                <li>Каждые 10 монет повышают уровень</li>
+                <li>У вас есть 3 жизни</li>
+                <li>Синие платформы пружинят, золотые - движутся</li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>
